@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FirstStage | Registro Usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon-firststage.jpg" />
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/css/registro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="py-5 text-center">
+            <h1>Registro de Usuario</h1>
+        </div>
+       
+            <form role="form" action="lista.html">
+                <div class="form-group">
+                  <label for="nombres">Nombres</label>
+                  <input type="nombre" class="form-control" id="nombres" placeholder="Ingrese nombre(s)">
+                </div>
+
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="apellidos" class="form-control" id="apellidos" placeholder="Ingrese apellido(s)">
+                  </div>
+
+                  <div class="form-group"> 
+                    <label for="pais" class="control-label">Pais</label>
+                    <select class="form-control" id="pais">
+                        <option value="PERU">PERU</option>
+                        <option value="CHILE">CHILE</option>
+                        <option value="BRASIL">BRASIL</option>
+                        <option value="COLOMBIA">COLOMBIA</option>
+                        <option value="VENEZUELA">VENEZUELA</option>
+                        <option value="ARGENTINA">ARGENTINA</option>
+                        <option value="BOLIVIA">BOLIVIA</option>
+                    </select>                    
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Ingrese un email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <input type="text" class="form-control" id="usuario" placeholder="Ingrese un usuario" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Ingrese un password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="medio" class="control-label">Género de Videojuegos Favorito</label>
+                    <select class="form-control" id="genero">
+                        <option value="Pelea">Pelea</option>
+                        <option value="Deporte">Deporte</option>
+                        <option value="RPG">RPG</option>
+                        <option value="FPS">FPS</option>
+                    </select>
+                </div>
+
+                 <div class="form-group"> 
+                    <label for="medio" class="control-label">¿Cómo te enteraste de la existencia de FirstStage?</label>
+                    <select class="form-control" id="medio">
+                        <option value="Blogs">Blogs</option>
+                        <option value="Foros">Foros</option>
+                        <option value="Por un amigo">Por un amigo</option>
+                        <option value="De casualidad">De casualidad</option>
+                    </select>                    
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" id="btnRegistrar" class="btn btn-primary btn-lg">Registrar</button>
+                    </div>
+                </div>
+              </form>
+        </div>
+
+    <script src="assets/js/jquery-3.3.1.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/registrar.js"></script>
+</body>
+</html>

@@ -1,7 +1,6 @@
 package com.firststage.services.entidades;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "USUARIO")

@@ -1,0 +1,10 @@
+body {
+    background-image: url("../img/registro.jpg");
+    background-repeat: initial;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+h1, label {
+    color: white;
+}

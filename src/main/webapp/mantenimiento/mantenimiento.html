@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FirstStage | Mantenimiento</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icon-firststage.jpg" />
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../assets/css/mantenimiento.css">
+    <script type="text/javascript">
+        function checkAll(e) {
+            var checkboxes = document.getElementsByName("options[]");
+            
+            if (e.checked) {
+                for (var i = 0; i < checkboxes.length; i++) { 
+                checkboxes[i].checked = true;
+                }
+            } else {
+                for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="py-5 text-center">
+            <h1>Mantenimiento de videojuegos</h1>
+        </div>
+       
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="col-12 row">
+                    <a href="#addVideogameModal" class="btn btn-success" data-toggle="modal">
+                            <i class="material-icons">add_circle</i>
+                            <span> Agregar videojuego</span></a>
+                        
+                    <a href="#deleteVideogameModal" class="btn btn-danger" data-toggle="modal">
+                           <i class="material-icons">delete</i>
+                            <span> Eliminar</span></a>					
+                </div>
+            </div>
+            <table class="table table-striped table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="selectAll" onchange="checkAll(this)">
+                                <label for="selectAll"></label>
+                            </span>
+                        </th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Creadores</th>
+                        <th>Fecha de lanzamiento</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="videojuegos">
+                    <!-- AJAX GET GAMES -->
+                </tbody>
+            </table>
+            <div class="clearfix">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item disabled"><a href="#" class="page-link" tabindex="-1">Previo</a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link">5</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Siguiente</a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Agregar Modal HTML -->
+	<div id="addVideogameModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="mantenimiento.html" >
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Agregar videojuego</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>Nombre de videojuego</label>
+                                <input type="text" id="nombre" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Creador</label>
+                                <input type="text" id="creador" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha de lanzamiento</label>
+                                <input type="date" id="fechaLanzamiento" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Genero</label>
+                                <input type="text" id="genero" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Plataforma</label>
+                                <input type="text" id="plataforma" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Calificación</label>
+                                <input type="text" id="calificacion" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Ruta de la imagen</label>
+                                <input type="text" id="ruta" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                            <input type="submit" id="agregar" class="btn btn-success" value="Agregar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Editar Modal HTML -->
+        <div id="editVideogameModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Editar videojuego</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>Nombre de videojuego</label>
+                                <input type="text" class="form-control" value="Left 4 Dead" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Creador</label>
+                                <input type="text" class="form-control" value="Valve" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha de lanzamiento</label>
+                                <input type="date" class="form-control" required>
+                            </div>					
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                            <input type="submit" id="editar" class="btn btn-info" value="Guardar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Eliminar Modal HTML -->
+        <div id="deleteVideogameModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Eliminar videojuego</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <p>¿Estás seguro de eliminar este registro?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                            <input type="submit" id="eliminar" class="btn btn-danger" value="Eliminar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <script src="../assets/js/jquery-3.3.1.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/man_agregar.js"></script>
+    <script src="../assets/js/man_listar.js"></script>
+    <script src="../assets/js/man_eliminar.js"></script>
+</body>
+</html>

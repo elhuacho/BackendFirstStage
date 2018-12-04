@@ -39,11 +39,11 @@ public class ServicesApplicationTests {
 	@Test
 	public void testRegistrarUsuario() {
 		Usuario usuario = new Usuario();
-		usuario.setNombres("Pepito");
+		usuario.setNombres("Abel");
 		usuario.setApellidos("Perez Luna");
 		usuario.setPais("Peru");
-		usuario.setEmail("waltercorreo@gmail.com");
-		usuario.setUsuario("XT1000");
+		usuario.setEmail("abel@gmail.com");
+		usuario.setUsuario("abel20");
 		usuario.setPassword("12345678");
 		usuario.setGeneroVideojuego("Pelea");
 		usuario.setMedioComunicacion("Foros");
@@ -53,18 +53,18 @@ public class ServicesApplicationTests {
 
 	@Test
 	public void testConsultarUsuario() {
-		Usuario usuario = usuarioRepositorio.buscarUsuario("XT1000");
+		Usuario usuario = usuarioRepositorio.buscarUsuario("abel20");
 		Assert.assertNotNull(usuario);
 	}
 
 	@Test
 	public void testRegistrarVideojuego() {
 		Videojuego videojuego = new Videojuego();
-		videojuego.setNombre("DRAGON QUEST XI: ECHOES OF AN ELUSIVE AGE ");
-		videojuego.setCreador("Square Enix");
+		videojuego.setNombre("SUPERMARIO BROS 2");
+		videojuego.setCreador("Nintendo");
 		videojuego.setFechaLanzamiento(new Date());
 		videojuego.setGenero("Role-playing");
-		videojuego.setPlataforma("PS4");
+		videojuego.setPlataforma("Supernintendo");
 		videojuego.setCalificacion("8");
 		Videojuego v = videojuegoRepositorio.save(videojuego);
 		Assert.assertNotNull(v);
@@ -73,13 +73,14 @@ public class ServicesApplicationTests {
 
 	@Test
 	public void testActualizarVideojuego() {
-		Optional<Videojuego> optional = videojuegoRepositorio.findById(1L);
+		Optional<Videojuego> optional = videojuegoRepositorio.findById(7L);
 		Videojuego videojuego = optional.get();
-		videojuego.setNombre("PUNCH OUT UPDATE");
+		videojuego.setNombre("STUDIO MDHR");
 		videojuegoRepositorio.save(videojuego);
 
-		Assert.assertEquals("PUNCH OUT UPDATE", videojuego.getNombre());
+		Assert.assertEquals("STUDIO MDHR", videojuego.getNombre());
 	}
+
 
 	@Test
 	public void testListarNuevosVideojuegos() {

@@ -1,0 +1,21 @@
+body {
+    background-image: url("../img/fondo-mantenimiento.jpg");
+    background-repeat: initial;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+h1 {
+    color: white;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+.row a:first-child{
+    margin-right: 20px;
+}

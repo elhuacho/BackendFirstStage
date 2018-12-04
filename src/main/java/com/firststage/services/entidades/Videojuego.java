@@ -24,6 +24,7 @@ public class Videojuego {
     private String genero;
     private String plataforma;
     private String calificacion;
+    private String rutaImagen;
 
     public long getCodigo() {
         return codigo;
@@ -79,5 +80,13 @@ public class Videojuego {
 
     public void setCalificacion(String calificacion) {
         this.calificacion = calificacion;
+    }
+
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
+
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
     }
 }
